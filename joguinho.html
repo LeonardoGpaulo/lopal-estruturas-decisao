@@ -8,18 +8,25 @@
 <body>
     <script>
 
-        prompt("Eu pensei em um número de 1 a 100, tente adivinhar")
+        let resposta = prompt("Eu pensei em um número de 1 a 100, tente adivinhar")
+        let numeroAleatorio = Math.random()*100;
+        let numeroAleatorioInteiro = Math.round(numeroAleatorio); 
 
-    
-        let numeroAleatorio = Math.random()*99+1;
-        let numeroAleatorioInteiro = Math.round(numeroAleatorio);
 
-        if(prompt == numeroAleatorioInteiro){
-            Document.write("parábens rapaz");
-        }else if( numeroAleatorioInteiro){
-            document.write(" Voce perdeu, Eu pensei em " + numeroAleatorioInteiro);
-        }
+        //if( resposta == numeroAleatorioInteiro){
+        //    document.write("parábens rapaz");
+        //}else if( numeroAleatorioInteiro){
+        //    document.write(" Voce perdeu, Eu pensei em " + numeroAleatorioInteiro);
+        //}   
 
+        let resultado = (resposta >=1 && resposta<=10) ?
+                        (resposta == numeroAleatorioInteiro) ?
+                            "parábens! você adivinhou" :
+                            "você errou! O número que eu pensei era " +
+                                numeroAleatorioInteiro + "!" :
+                        "número inválido."
+
+        document.write(resultado);
 
     </script>
 </body>
